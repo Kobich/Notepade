@@ -1,27 +1,18 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Notepade.ViewModels;
-using Notepade.Views;
+using Notepad.ViewModels;
+using Notepad.Views;
 
-namespace Notepade
-{
-    public partial class App : Application
-    {
-        public override void Initialize()
-        {
+namespace Notepad {
+    public partial class App: Application {
+        public override void Initialize() {
             AvaloniaXamlLoader.Load(this);
         }
 
-        public override void OnFrameworkInitializationCompleted()
-        {
+        public override void OnFrameworkInitializationCompleted() {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
-            }
+                desktop.MainWindow = new MainWindow();
 
             base.OnFrameworkInitializationCompleted();
         }
